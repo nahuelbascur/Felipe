@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Ejercicios </title>
+			<script>
+
+/* EJERCICIO 1 - Tamaño Grande - Dado un array, escribe una función que cambie todos los números positivos en él, por el string “big”. Ejemplo: grande([-1,3,5,-5]) devuelve [-1, “grande”, “grande”, -5].*/
+
+function grande(x) { 
+	for(var i=0;i<x.length;i++) {
+		if(x[i]>0) { 
+			x[i]="big";
+		}
+	}
+	return x;
+}
+a=grande([-1,3,5,-5]);
+console.log(a);
+
+/* EJERCICIO 2 - Imprime (print) el menor, devuelve (return) el mayor - Crea una función que tome un array de números. La función debería imprimir (print) el valor menor del array, y devolver (return) el mayor. */
+
+function crimson(x) {
+	min=x[0];
+	max=x[0];
+	for(var i=0;i<x.length;i++) {
+		if(x[i]<min) {
+			min=x[i];
+		}
+			
+		             
+		if(x[i]>max) {
+			max=x[i];
+		}
+ 	}
+
+		console.log(min);
+		return max;
+ }
+
+a=crimson([-1,3,5,-5]);
+console.log(a);	
+
+/* 	EJERCICIO 3 - Imprime (print) uno, devuelve (return) otro- Crea una función para un array de números. La función debería imprimir (print) el penúltimo valor y devolver (return) el primer valor impar.*/
+
+function tanaka(x) {
+
+z=x[x.length-2];
+console.log(z);
+
+for(var i=0;i<=x.length;i++) {
+  if(x[i]%2==1 || x[i]%2==-1) {
+  	return x[i];
+  }
+ }
+}
+
+a=tanaka([2,3,5,-5]);
+console.log(a);	
+
+/* EJERCICIO 4 - Doble Visión - Dado un array (similar a decir ‘tomado un array’), crea una función que devuelva un nuevo array donde cada valor se duplique. Entonces, doble([1,2,3]) debiera devolver [2, 4, 6] sin cambiar el array original.*/
+
+function valley(x) {
+	for(var i=0;i<x.length;i++) {
+		x[i]=x[i]*2;
+	}
+	return x;
+}
+
+a=valley([1,2,3]);
+console.log(a);
+
+/* EJERCICIO 5 - Contar Positivos -  Dado un array de números, crea una función para reemplazar el último valor con el número de valores positivos encontrados en el array. Ejemplo, contarPositivos([-1,1,1,1]) cambia el array original y devuelve [-1,1,1,3].*/
+
+function contpositivos(x) {
+	var counter=0;
+  for(var i=0;i<x.length;i++) {
+		
+		if(x[i]>0) {
+			counter=counter+1;
+            x[x.length-1]=counter;
+        }
+      }
+  return x;
+}
+
+a=contpositivos([-1,2,3,5]);
+console.log(a);
+
+/* EJERCICIO 6 - Pares e Impares - Crea una función que acepte un array. Cada vez que ese array tenga 3 valores impares seguidos, imprime (print) “¡Qué imparcial!”, y cada vez que tenga 3 pares seguidos, imprime (print) “¡Es para bien!”.*/
+
+function paresimpares(x) {
+	var counter_impar=0;
+	var counter_par=0;
+	var words=["Que imparcial", "Es para bien"]
+	
+for(var i=0;i<x.length;i++) {
+	if(x[i]%2==1 || x[i]%2==-1) {
+		counter_impar=counter_impar+1;
+		counter_par=0;
+	}
+else if(x[i]%2==0) {
+		counter_par=counter_par+1;
+		counter_impar=0;
+	}
+
+	if(counter_impar==3) {
+		console.log(words[0]);
+	}
+else if(counter_par==3) {
+		console.log(words[1]);
+	}
+}
+}
+
+a=paresimpares([-1,2,3,5,7,8,16,4]);
+console.log(a);
+
+/* EJERCICIO 7 - Incrementa los Segundos - Dado un array de números arr, agrega 1 a cualquier otro elemento, específicamente a aquellos cuyo índice es impar (arr[1], arr[3], arr[5], etc). Luego, console.log cada valor del array y devuelve arr.*/
+
+function mas_uno_ind_impar(x) {
+
+for(var i=0;i<x.length;i++) {
+if(i%2==1 || i%2==-1) {
+	x[i]=x[i]+1;
+}
+}
+return x;
+}
+
+a=mas_uno_ind_impar([-1,2,3,5,7,8,16,4]);
+console.log(a);
+
+
+/* EJERCICIO 8 - Longitudes previas - Pasado un array (similar a decir ‘tomado un array’ o ‘dado un array’) que contiene strings, reemplaza cada string con un número de acuerdo cantidad de letras (longitud) del string anterior. Por ejemplo, longitudesPrevias([“programar”,“dojo”, “genial”]) debería devolver [“programar”,9, 4]. Pista: ¿For loops solo puede ir hacia adelante?*/
+
+function patras(x){
+  for(var i=x.length-1; i>0; i--){
+    x[i]=x[i-1].length;
+  }
+  return x;
+}
+
+a=patras(["marcelino","dojo","genial","ornitorrinco"]);
+console.log(a);
+
+
+
+/* EJERCICIO 9 - Agrega Siete - Construye una función que acepte un array. Devuelve un nuevo array con todos los valores del original, pero sumando 7 a cada uno. No alteres el array original. Por ejemplo, agregaSiete([1,2,3) debería devolver [8,9,10] en un nuevo array. */
+
+function array(x) {
+newarray=[ ];	
+	for(var i=0;i<x.length;i++) {
+		x[i]=x[i]+7;
+		newarray.push(x[i]);
+	}
+	return newarray;
+}
+a=array([-1,2,3,5,7]);
+console.log(a);
+
+/* EJERCICIO 10 - Array Inverso - Dado un array, escribe una función que invierte sus valores en el lugar. Ejemplo: invertir([3,1,6,4,2)) devuelve el mismo array pero con sus valores al revés, es decir [2,4,6,1,3]. Haz esto sin crear un array temporal vacío. (Pista: necesitarás intercambiar (swap) valores). */
+
+function fruna(x) {
+
+var temp;
+for(var i=0;i<((x.length)/2);i++) {
+
+	temp=x[i];
+	x[i]=x[x.length-i-1];
+	x[x.length-i-1]=temp;						 /*x.length-(i+1)*/
+}
+
+ return x;
+}
+
+a=fruna([-1,2,3,5,6]);
+console.log(a);
+
+/*EJERCICIO 11 - Perspectiva: Negativa - Dado un array crear y devuelve uno nuevo que contenga todos los valores del array original, pero negativos (no simplemente multiplicando por -1). Dado [1,-3,5], devuelve [-1,-3,-5].*/
+
+function pajaritos(x) {
+	for(var i=0;i<x.length;i++) {
+		if(x[i]>0) {
+		x[i]=x[i]*(-1);
+	}
+}
+
+return x;
+}
+
+a=pajaritos([-1,2,3,-5]);
+console.log(a);
+
+/* EJERCICIO 12 - Siempre hambriento - Crea una función que acepte un array e imprima (print) “yummy” cada vez que alguno de los valores sea “comida”. Si ningún valor es “comida”, entonces imprime “tengo hambre” una vez. */
+
+function fifa(x) {
+	var cont=0;
+	for(var i=0;i<x.length;i++) {
+	
+	if(x[i]=="comida") {
+	  console.log("yummy");
+	  cont=cont+1;	
+					}	
+} 
+
+	if (cont==0) { 
+	console.log("tengo hambre"); 
+				}    
+}
+
+a=fifa([5,4,"comida",-5]);
+console.log(a);
+
+/* EJERCICIO 13 - Cambiar hacia el centro -  Dado un array, cambia el primer y último valor, el tercero con el ante penútimo, etc. Ejemplo: cambiaHaciaElCentro([true, 42, “Ada”, 2, “pizza”]) cambia el array a [“pizza¨, 42, “Ada”, true]. cambiaHaciaElCentro([1,2,3,4,5,6]) cambia el array a [6,2,4,3,5,1]. No es necesario devolver (return) el array esta vez.*/
+
+function sopeadisimo(x) {
+ 	var temp=0;
+ 	for(var i=0;i<(x.length-1)/2;i+=2) {
+
+	    temp=x[i];
+		x[i]=x[x.length-1-i];
+		x[x.length-1-i]=temp;
+									  }
+	 return x;
+			
+}
+  a=sopeadisimo([1,2,3,4,5,6,7,8,9,10]);
+console.log(a); 
+
+/*  EJERCICIO 14 - Escala el Array - Dado un array arr y un número num, multiplica todos los valores en el array arr por el número num, y devuelve el array arr modificado. Por ejemplo, escalaArray([1,2,3], 3] debería devolver [3,6,9].*/
+
+function fin(x,y) {
+	for(var i=0;i<x.length;i++) {
+		x[i]=x[i]*y;
+	}
+	return x;
+}
+
+a=fin([1,2,3],3);
+console.log(a);
+
+
+	</script>
+
+	</head>
+
+	<body>
+	
+<!-- Respuesta 1 -->
+OUTPUT Ej1: [-1, "big", "big", -5]
+
+<!-- Respuesta 2 -->
+OUTPUT Ej2: -5  ret=5
+
+<!-- Respuesta 3 -->
+OUTPUT Ej3: 5 3 
+
+<!-- Respuesta 4 -->
+OUTPUT Ej4: [2,4,6]
+
+<!-- Respuesta 5 -->
+OUTPUT Ej5: [-1, 2, 3, 3]
+
+<!-- Respuesta 6 -->
+OUTPUT Ej6: "Que imparcial"
+
+<!-- Respuesta 7 -->
+OUTPUT Ej7: [-1, 3, 3, 6, 7, 9, 16, 5]
+
+<!-- Respuesta 8 -->
+OUTPUT Ej8: ["marcelino", 9, 4, 6]
+
+<!-- Respuesta 9 -->
+OUTPUT Ej9: [6, 9, 10, 12, 14]
+
+<!-- Respuesta 10 -->
+OUTPUT Ej10: [6, 5, 3, 2, -1]
+
+<!-- Respuesta 11 -->
+OUTPUT Ej11: [-1, -2, -3, -5]
+
+<!-- Respuesta 12 -->
+OUTPUT Ej12: "yummy"
+
+<!-- Respuesta 13 -->
+OUTPUT Ej13:  [ 10, 2, 8, 4, 6, 5, 7, 3, 9, 1 ]
+
+<!-- Respuesta 14 -->
+OUTPUT Ej14: [ 3, 6, 9 ]
+
+
+	</body>
+
+</html>
