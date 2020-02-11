@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Funciones de Jquery </title>
+		<meta charset="UTF-8">
+		<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+		<style type="text/css">
+		 /* *{outline: 1px solid red;}*/
+		 
+		#container {
+			width: 600px;
+			height:640px;
+			background-color: black;
+			margin-left: auto;
+			margin-right: auto;
+			font-family: Arial Rounded MT;
+		
+		}
+
+		.bar {
+			width: auto;
+			height: 200px;
+			margin: 10px 10px 10px 10px;
+			position:relative;
+			top:10px;
+			background-image: url("yellow.jpg");
+			
+		}
+
+		button {
+			display:inline-block;
+			margin: 0px 0px 0px 33px;
+			position:relative;
+			top: 67px;
+
+		}
+
+		h1 {
+			display:inline-block;
+			position:absolute;
+			right: 110px;
+			color:#7b241c;
+		
+		}
+
+		p {
+		width: 400px;
+		margin: 90px 0px 0px 157px;
+
+		}
+
+		</style>
+		
+		<script>
+
+			$(document).ready(function(){
+
+				$('#boton1').click(function(){
+		 				$('p.alfa').css('color', 'red');
+		 		})
+
+				$("#joker").hide("slow", function(){
+    			
+  				});
+
+		 		$('#boton2').click(function(){
+
+		 				$("#joker").slideToggle("slow"); 
+   				});
+
+		 		$('#boton3').click(function(){
+		 				$('.new_paragraph').append('<h3>This is the new paragraph. As you can see there is no argument, just empty words saying nothing...</h3>');
+		 		});
+
+			});
+
+		</script>
+
+	
+	</head>
+ 
+
+	<body>
+
+		<div id="container"> 
+
+			<div class="bar"> 
+ 
+				<button id='boton1'>Add class</button>
+				<h1> AddClass </h1>
+				<p class="alfa"> Click the button to add class 'red' to this paragraph </p>
+
+			</div>
+
+			<div class="bar"> 
+				
+				<button id='boton2'>Slidetoggle</button>
+				<h1> Slidetoggle </h1>
+				<p> Click the button to slidetoggle a hidden image </p>
+				<img id="joker" src="joker.jpeg"></img>
+
+			</div>
+
+			<div class="bar">
+
+				<button id='boton3'>Append</button>
+				<h1> Append </h1>
+				<p> Click the button to append a new paragraph </p>
+				<div class="new_paragraph"></div>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
