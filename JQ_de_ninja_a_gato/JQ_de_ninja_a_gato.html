@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> De ninja a gato </title>
+		<meta charset="UTF-8">
+		<script
+			  src="https://code.jquery.com/jquery-3.3.1.js"
+			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			  crossorigin="anonymous"></script>
+
+		<style type="text/css">
+		  /**{outline: 1px solid red;}*/
+		 
+		#container {
+			width: 1020px;
+			height:500px;
+			background-color:#7F241B;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		img { 
+			width:180px;
+			height:480px;
+			display:inline-block;
+			margin: 10px 0px 0px 17px;
+		}
+
+
+
+		</style>
+		
+		<script>
+
+		$(document).ready(function(){
+
+			$('img').click(function(){
+				var temp=$(this).attr('src');
+
+				$(this).attr('src',$(this).attr('data-alt-src'));
+
+
+				$(this).attr('data-alt-src',$(this).attr('doto-olt-src'));
+
+
+				$(this).attr('doto-olt-src',temp);
+
+
+				/*$(this).attr('data-alt-src',temp);*/
+			});
+		});
+
+		</script>
+
+	
+	</head>
+ 
+	<body>
+
+		<div id="container">
+
+			<img src='bor0.jpg' data-alt-src='lak0.jpg' doto-olt-src='mou0.jpg'> 
+			<img src='bor1.jpg' data-alt-src='lak1.jpg' doto-olt-src='mou1.jpg'> 
+			<img src='bor2.jpg' data-alt-src='lak2.jpg' doto-olt-src='mou2.jpg'>
+			<img src='bor3.jpg' data-alt-src='lak3.jpg' doto-olt-src='mou3.jpg'>
+			<img src='bor4.jpg' data-alt-src='lak4.jpg' doto-olt-src='mou4.jpg'>
+
+		</div>
+
+	</body>
+
+</html>
+
