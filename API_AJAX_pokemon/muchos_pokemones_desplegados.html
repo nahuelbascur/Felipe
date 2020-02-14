@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Pokemon </title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script type="text/javascript">
+
+        var muchos_pokemones=function(){
+
+          for(i=1;i<=150;i++){
+            $(".pokemon").append("<img src='http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/"+i+".png'/>")
+          }
+        }
+
+        $(document).ready(function(){
+          muchos_pokemones();
+        });
+  
+        </script>
+
+    </head>
+
+    <body>
+
+        <style>
+
+        img{
+          width:120px;
+          height:120px;
+        }
+
+        </style>
+
+        <div class="pokemon"> </div>
+
+    </body>
+
+</html>
