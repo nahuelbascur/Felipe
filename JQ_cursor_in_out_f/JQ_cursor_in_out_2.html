@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Cursor In Out </title>
+		<meta charset="UTF-8">
+		<script
+			  src="https://code.jquery.com/jquery-3.3.1.js"
+			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			  crossorigin="anonymous"></script>
+
+		<style type="text/css">
+		  /**{outline: 1px solid red;}*/
+		 
+		#container {
+			width: auto;
+			height:640px;
+			margin-left: auto;
+			margin-right: auto;
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			background-image: url("back.jpg");
+		}
+
+		img { 
+			width:250px;
+			height:250px;
+			display:inline-block;
+			margin: 20px 45px 25px 26px;
+			border-radius: 25px;
+		}
+
+		h2 {
+			width:220px;
+			height:30px;
+			display:inline-block;
+			margin: 10px 0px 0px -218px;
+			color:#B2BABB;
+			font-size: 17px;
+			position:relative;
+			left: -59px;
+			top: 0px;
+			text-align: center;
+		}
+
+		.player {
+		opacity: 0.01;
+		width:250px;
+		height:40px;
+		display:inline-block;
+		border-radius: 25px;
+		}
+
+		#radio {
+		width:250px;
+		height:40px;
+		display:inline-block;
+		margin: 0px 43px 24px -299px;
+		border-radius: 25px;
+		position:relative;
+		left:0px;
+		top:14px;
+		}
+
+		.popup1 {
+		width:150px;
+		height:50px;
+			
+		}
+
+
+		</style>
+		
+		<script>
+
+  			$(document).ready(function(){
+					
+	  			$("img").hover(function(){
+  				var temp=$(this).attr('src');
+			    $(this).attr('src',$(this).attr('data-alt-src'));
+			  
+			  	$(this).attr('data-alt-src',temp);
+			});
+			
+	  			$(".kk").mouseover (function (){
+	  			$(".kk")[0].play();
+	  			});
+
+
+	            $(".kk").mouseleave (function (){
+	            $(".kk")[0].pause();
+	            });
+
+	            $(".dd").mouseover (function (){
+	  			$(".dd")[0].play();
+	  			});
+
+	            $(".dd").mouseleave (function (){
+	            $(".dd")[0].pause();
+	            });
+
+	            $(".cc").mouseover (function (){
+	           	$(".cc")[0].play();
+	            });
+
+	            $(".cc").mouseleave (function (){
+	           	$(".cc")[0].pause();
+	            });
+
+	            $(".rr").mouseover (function (){
+	           	$(".rr")[0].play();
+	            });
+
+	            $(".rr").mouseleave (function (){
+	           	$(".rr")[0].pause();
+	            });
+
+	            $(".ss").mouseover (function (){
+	           	$(".ss")[0].play();
+	            });
+
+	            $(".ss").mouseleave (function (){
+	           	$(".ss")[0].pause();
+	            });
+
+	            $(".rs").mouseover (function (){
+	           	$(".rs")[0].play();
+	            });
+
+	            $(".rs").mouseleave (function (){
+	           	$(".rs")[0].pause();
+	            });
+
+	            $(".re").mouseover (function (){
+	           	$(".re")[0].play();
+	            });
+
+	            $(".re").mouseleave (function (){
+	           	$(".re")[0].pause();
+	            });
+
+	            $(".tt").mouseover (function (){
+	           	$(".tt")[0].play();
+	            });
+
+	            $(".tt").mouseleave (function (){
+	           	$(".tt")[0].pause();
+	            });
+
+   });
+		</script>
+
+	</head>
+ 
+	<body>
+		<div id="container">
+			
+				<img src='ku_front.png' data-alt-src='ku_back.png'>
+				<h2>Kuervos del Sur</h2>
+				<div id="radio"> <audio class="player kk" controls><source src="kuervos_b.mp3" type="audio/mpeg"></audio></div>
+				
+				<img src='dt_front.jpg' data-alt-src='dt_back.jpg'> 
+				<h2>Dream Theater</h2>
+				<div id="radio"><audio class="player dd" controls><source src="dream_b.mp3" type="audio/mpeg"></audio></div>
+
+				<img src='co_front.jpg' data-alt-src='co_back.jpg'> 
+				<h2>Congreso</h2>
+				<div id="radio"><audio class="player cc" controls><source src="congreso_b.mp3" type="audio/mpeg"></audio></div>
+
+				<img src='ra_front.jpg' data-alt-src='ra_back.jpg'> 
+				<h2>Rammstein</h2>
+				<div id="radio"><audio class="player rr" controls><source src="rammstein_b.mp3" type="audio/mpeg"></audio></div>
+
+				<img src='so_front.jpg' data-alt-src='so_back.jpg'> 
+				<h2>Soil and Pimp Sessions</h2>
+				<div id="radio"><audio class="player ss" controls><source src="soil_b.mp3" type="audio/mpeg"></audio></div>
+
+				<img src='ro_front.jpg' data-alt-src='ro_back.jpg'> 
+				<h2>Robin Schulz</h2>
+				<div id="radio"><audio class="player rs" controls><source src="robin_b.mp3" type="audio/mpeg"></audio></div>
+
+				<img src='re_front.jpg' data-alt-src='re_back.jfif'>
+				<h2>Resīdεntә</h2>
+				<div id="radio"><audio class="player re" controls><source src="resi_b.mp3" type="audio/mpeg"></audio></div>
+
+				<img src='to_front.jpg' data-alt-src='to_back.jpg'>
+				<h2>Tomáš Dvořák</h2>
+				<div id="radio"><audio class="player tt" controls><source src="to_b.mp3" type="audio/mpeg"></audio></div>
+		</div>
+
+	</body>
+
+</html>
