@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <title>OpenWeather</title>
+
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" type="text/css" href="tiempo.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+
+
+            $(document).ready(function(){
+                			$('.submit_weather').click(function(){
+
+	                			var city= $("#city").val();
+
+	                			if(city !=''){
+	                			
+
+	                				$.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=409dd22bc5bfff3ead15f33138f3419e&lang=sp", function(data){
+
+	                					var mostrarlo_todo=show(data);
+
+			                			$("#show").html(mostrarlo_todo);
+			                			/*$("#city").val('');*/
+			                		
+			                			function show(data){
+
+							      
+							     	    return "<div class='fade-in'><p>Tiempo:" +data.weather[0].description+"</p>"+
+							     			   "<p>Temperatura:" +data.main.temp+"° Celsius</p>"+
+							            	   "<p>Humedad relativa del aire: "+data.main.humidity+"%</p>"+
+							            	   "<p>Viento: " +data.wind.speed+"km/hora</p></div>"
+							            	   
+					        			}
+
+					        					
+			            	       			         
+							        	/*else{
+			                			$("#error").html('Tení que escribir una ciudad pu');
+			                			}*/
+
+	                				}, "json");
+
+	                			}
+
+	        				});
+
+	        });        	              			    
+			        // your code here (build up your url)
+			
+			        // don't forget to return false so the page doesn't refresh
+			        /*return false;*/
+		</script>
+	</head>
+
+	<body>
+
+		
+<div class="all">
+  		<div class="container-fluid text-center py-3 base">
+  				<h1 class="container-fluid display-1 text-white header">El tiempo en tu ciudad</h1>
+  				<p class="lead text-white"> En esta página encontrarás información meteorológica actualizada de una gran cantidad de lugares alrededor de mundo</p>
+
+  				<div class="container">           
+            <div class="row"> 
+              <div class="col-6">
+                  <div class="container display-4 py-4"><input class="text-center display-4" type ="text" id="city"placeholder="Introduzca ciudad"></input>
+                  </div>
+                  <!--<button id="submit_weather">Buscar</button>-->
+                  <button type="button" class="btn btn-secondary btn-sm submit_weather">Buscar</button>
+              </div>
+              <div class="col-6 display-4">
+  							   <div id="show"></div>
+  						</div>
+            </div>
+
+            <!--<div class="row"> 
+  						 <div class="col-6">
+  							  <button id="submit_weather">Buscar</button>
+  						 </div>
+  				  </div>-->
+
+
+  				</div>
+      </div>
+
+  <div id="demo" class="container-fluid carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+    
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="BB.jfif" width="1340" height="200">
+      </div>
+      <div class="carousel-item">
+        <img src="CC.jfif" width="1340" height="200">
+      </div>
+      <div class="carousel-item">
+        <img src="DD.jfif" width="1340" height="200">
+      </div>
+      <div class="carousel-item">
+        <img src="EE.jfif" width="1340" height="200">
+      </div>
+    </div>
+    
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+</div>
+		<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
+
+
+	</body>
+</html>
+
+
