@@ -1,0 +1,113 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Game Of Thrones</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="style_got.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+
+                $('.display_info').hide();
+
+                $('.houses').on('click','img',function(){
+                    $('.display_info').fadeIn(2000);
+
+                    var id = $(this).attr('id');
+
+                        $.get("https://anapioficeandfire.com/api/houses/"+id+"/", function(res){
+                            var displaying ="";
+
+                            displaying += "<button type='button' class='btn'>Ocultar</button>";
+                            displaying += "<img class='A' src='./ban/"+id+".jpg'></img>";
+                            displaying += "<h3 class='B text-left'>Nombre</h3>";
+                            displaying += "<p class='B'>"+res.name+"</p>";
+                            displaying += "<h3 class='B'>Región</h3>";
+                            displaying += "<p class='B'>"+res.region+"</p>";
+                            displaying += "<h3 class='B'>Frase</h3>";
+                            displaying += "<p class='B'>"+res.words+"</p>";
+                            displaying += "<h3 class='B'>Títulos</h3>";
+                            for(var i = 0; i < res.titles.length; i++) {
+                            displaying += "<p class='B'>"+res.titles[i]+"</p>";
+                            }
+                            displaying += "<h3 class='B'>Armas Ancestrales</h3>";
+                            displaying += "<p class='B'>"+res.ancestralWeapons+"</p>";
+                            
+                            
+                            $('.display_info').html(displaying);
+
+                            $('.btn').click(function(){
+                            $('.display_info').fadeOut(500);
+                            }); 
+
+
+                        }, "json");
+
+
+
+                });
+
+                         
+
+                       
+            });
+
+
+
+		</script>
+	 </head>
+
+
+
+	 <body>
+
+        <video src="video_loop.mp4" autoplay loop poster="preview.png"></video>
+
+        <div class="container-fluid">
+
+            <div class="container-fluid text-center mx-auto">
+                <div class="row">
+                    <div class="col-12 .col-">
+                        <img class="logo" src="game_of_logo2.png"></img>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="houses">
+                    <img id='378' src='./GOT/targaryen378.png' width="190" height="190">
+                    <img id='15' src='./GOT/baratheon15.png' width="190" height="190">
+                    <img id='229' src='./GOT/lannister229.png' width="190" height="190">
+                    <img id='6' src='./GOT/arryn6.png' width="190" height="190">
+                    <img id='362' src='./GOT/stark362.png' width="190" height="190">
+                    <img id='169' src='./GOT/greyjoy169.png' width="190" height="190">
+                </div>
+            </div>
+
+            <div class="container footer">
+                <div class="row">
+                    <div class="display_info"></div>
+                                    
+                </div>
+            </div>
+            <audio autoplay>
+            <source src="got_metalgot.mp3" type="audio/mp3">
+            </audio>
+
+        </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
